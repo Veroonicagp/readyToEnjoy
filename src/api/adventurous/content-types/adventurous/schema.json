@@ -4,7 +4,8 @@
   "info": {
     "singularName": "adventurous",
     "pluralName": "adventurers",
-    "displayName": "Adventurous"
+    "displayName": "Adventurous",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,15 +21,6 @@
     "mail": {
       "type": "email"
     },
-    "bithday": {
-      "type": "date"
-    },
-    "password": {
-      "type": "password"
-    },
-    "repeatpasword": {
-      "type": "password"
-    },
     "activities": {
       "type": "relation",
       "relation": "oneToMany",
@@ -40,6 +32,16 @@
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user",
       "mappedBy": "adventurous"
+    },
+    "media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

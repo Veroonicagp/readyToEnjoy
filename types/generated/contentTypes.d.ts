@@ -418,6 +418,7 @@ export interface ApiAdventurousAdventurous extends Schema.CollectionType {
     singularName: 'adventurous';
     pluralName: 'adventurers';
     displayName: 'Adventurous';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -426,9 +427,6 @@ export interface ApiAdventurousAdventurous extends Schema.CollectionType {
     name: Attribute.String;
     surname: Attribute.String;
     mail: Attribute.Email;
-    bithday: Attribute.Date;
-    password: Attribute.Password;
-    repeatpasword: Attribute.Password;
     activities: Attribute.Relation<
       'api::adventurous.adventurous',
       'oneToMany',
@@ -439,6 +437,7 @@ export interface ApiAdventurousAdventurous extends Schema.CollectionType {
       'oneToOne',
       'plugin::users-permissions.user'
     >;
+    media: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
