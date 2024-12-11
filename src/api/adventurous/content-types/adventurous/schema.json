@@ -21,12 +21,6 @@
     "mail": {
       "type": "email"
     },
-    "activities": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::activity.activity",
-      "mappedBy": "adventurous"
-    },
     "user": {
       "type": "relation",
       "relation": "oneToOne",
@@ -34,14 +28,27 @@
       "mappedBy": "adventurous"
     },
     "media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "password": {
+      "type": "password"
+    },
+    "confirmPassword": {
+      "type": "password"
+    },
+    "activities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::activity.activity",
+      "mappedBy": "advenId"
     }
   }
 }

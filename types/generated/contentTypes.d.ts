@@ -375,25 +375,14 @@ export interface ApiActivityActivity extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String;
-    location: Attribute.Enumeration<
-      [
-        'M\u00E1laga',
-        'Huelva',
-        'Sevilla',
-        'C\u00E1diz',
-        'Ja\u00E9n',
-        'C\u00F3rdoba',
-        'Almer\u00EDa',
-        'Granada'
-      ]
-    >;
     price: Attribute.String;
     description: Attribute.Text;
-    adventurous: Attribute.Relation<
+    advenId: Attribute.Relation<
       'api::activity.activity',
       'manyToOne',
       'api::adventurous.adventurous'
     >;
+    location: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -427,17 +416,19 @@ export interface ApiAdventurousAdventurous extends Schema.CollectionType {
     name: Attribute.String;
     surname: Attribute.String;
     mail: Attribute.Email;
-    activities: Attribute.Relation<
-      'api::adventurous.adventurous',
-      'oneToMany',
-      'api::activity.activity'
-    >;
     user: Attribute.Relation<
       'api::adventurous.adventurous',
       'oneToOne',
       'plugin::users-permissions.user'
     >;
     media: Attribute.Media;
+    password: Attribute.Password;
+    confirmPassword: Attribute.Password;
+    activities: Attribute.Relation<
+      'api::adventurous.adventurous',
+      'oneToMany',
+      'api::activity.activity'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
